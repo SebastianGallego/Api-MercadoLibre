@@ -1,0 +1,85 @@
+body {
+  background-color: black;
+}
+
+.contenedorControles {
+  display: flex;
+  flex-direction: column;
+}
+
+.contenedorTitulo {
+  display: flex;
+  justify-content: center;
+}
+
+.tituloBusqueda {
+  justify-content: center;
+  color: #fff;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.contenedorBusqueda {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.btnMostrarFavoritos {
+  padding: 5px 12px;
+}
+
+#contenedorTarjetas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  background-color: #bebbbb;
+  border: 2px solid #ffffff;
+  padding: 10px;
+  margin: 10px;
+  cursor: pointer;
+  width: 250px;
+  border-radius: 30px;
+  text-align: center;
+}
+
+.card-body {
+  text-align: center;
+}
+
+.card-title {
+  font-size: 25px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.favoritoUnSelected {
+  font-size: 25px;
+  cursor: pointer;
+  color: gray;
+}
+
+.favoritoSelected {
+  color: yellow;
+}
+
+.cardSeleccionada {
+  border-color: blue;
+}
+
+.card-text {
+  font-size: 20px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+.card-img-top {
+  width: 220px;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+}
+
+#containerFavoritos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}

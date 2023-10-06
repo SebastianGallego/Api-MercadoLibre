@@ -30,3 +30,18 @@ function getResults(data) {
     resultsContainer.appendChild(itemElement);
   });
 }
+
+/* Ejemlo Tarjeta
+
+tarjeta.innerHTML = `
+<img src="${producto.imagenUrl}" class="card-img-top" alt="${
+      producto.articulo
+    }" id="imagen">
+<div class="card-body">
+<h5 class="card-title">${producto.articulo}</h5>
+<i class="favoritoUnSelected">★</i>
+<p class="card-text" id="detalle">${producto.detalle}</p>
+<p class="card-text" id="precio">Precio: $${producto.precio.toFixed(2)}</p>
+</div>
+
+*/
