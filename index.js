@@ -1,47 +1,44 @@
-const resultsContainer = document.getElementById("results");
+import { ahora } from "./prueba.js";
+import { actualizarHora } from "./prueba.js";
 
-// Consulta a la API de ML
-fetch(
-  "https://api.mercadolibre.com/sites/MLA/search?q=Zapatillas%20Running%20Mujer&limit=10&sort=relevance"
-)
-  .then((response) => response.json())
-  .then((data) => {
-    console.log(data);
+document.addEventListener("DOMContentLoaded", (e) => {
+  fetchData();
 
-    getResults(data);
-  })
-  .catch((error) => {
-    console.error("Error al obtener datos de la API:", error);
-  });
+  //setInterval(actualizarHora, 5000);
+});
+
+const fetchData = async () => {
+  const res = await fetch("api.json");
+  const data = await res.json();
+  console.log(data);
+  getResults(data);
+};
 
 //Recibe el json de la consulta y lo muestra en pantalla
+const resultsContainer = document.getElementById("results");
 
-function getResults(data) {
-  data.results.forEach((result) => {
-    const itemElement = document.createElement("div");
-    itemElement.innerHTML = `
+async function getResults(data) {
+  data.forEach((result) => {
+    resultsContainer.innerHTML += `
     <div class="card">
-        <h3>${result.title}</h3>
-        <p>Precio: $${result.price}</p>
-        <img src="${result.thumbnail}" alt="${result.title}">
-    </div>
-
-  `;
-    resultsContainer.appendChild(itemElement);
+        <img src="${result.thumbnailUrl}" alt="${result.title}">
+        <h3 class="productPrice">${result.price} €</h3>
+        <h3 class="brand">${result.brand}</h3>
+        <h4>${result.title}</h4>
+        <div class="rating">${generarEstrellas(result.rating)}</div>
+        
+    </div> `;
   });
 }
 
-/* Ejemlo Tarjeta
+// Función para generar estrellas en proporción al rating
+function generarEstrellas(rating) {
+  const estrellas = "★★★★★"; // Cinco estrellas llenas
+  const estrellasVacias = "☆☆☆☆☆"; // Cinco estrellas vacías
+  const valorMaximo = 5; // Valor máximo de calificación
 
-tarjeta.innerHTML = `
-<img src="${producto.imagenUrl}" class="card-img-top" alt="${
-      producto.articulo
-    }" id="imagen">
-<div class="card-body">
-<h5 class="card-title">${producto.articulo}</h5>
-<i class="favoritoUnSelected">★</i>
-<p class="card-text" id="detalle">${producto.detalle}</p>
-<p class="card-text" id="precio">Precio: $${producto.precio.toFixed(2)}</p>
-</div>
+  const estrellasLlenas = estrellas.slice(0, rating);
+  const estrellasRestantes = estrellasVacias.slice(0, valorMaximo - rating);
 
-*/
+  return estrellasLlenas + estrellasRestantes;
+}

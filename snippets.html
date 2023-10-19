@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>App Decachlon</title>
+    <link href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' rel='stylesheet'>
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet'>
+
+    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+
+
+
+    <script defer src="index.js" type="module"></script>
+    <link rel="stylesheet" href="snippets.css">
+
+
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm navbar-light bg-white border-bottom d-flex  align-items-center ">
+        <img src="decathlon logo.png" alt="logo Decathlon" class="navLogo ">
+
+
+
+        <div class="input-group ">
+            <input type="text" class="form-control input-text" placeholder="Buscar productos...."
+                aria-label="BuscarProductos" aria-describedby="basic-addon2">
+            <div class="input-group-append">
+                <div class="btn btn-outline-primary btn-lg" "><i class=" fa fa-search"></i></div>
+            </div>
+        </div>
+
+
+
+
+
+    </nav>
+
+
+
+
+
+    <section id="sidebar">
+        <div>
+            <h6 class="p-1 border-bottom">Productos</h6>
+            <ul>
+                <li><a href="#">Pantalon</a></li>
+                <li><a href="#">Remeras</a></li>
+                <li><a href="#">Zapatillas</a></li>
+                <li><a href="#">Mochila</a></li>
+
+            </ul>
+        </div>
+        <div>
+            <h6 class="p-1 border-bottom">Colores</h6>
+            <ul class="list-group">
+                <li class="list-group-item list-group-item-action mb-2 rounded"><a href="#">
+                        <span class="fa fa-circle pr-1" id="gris"></span>Gris
+                    </a></li>
+                <li class="list-group-item list-group-item-action mb-2 rounded"><a href="#">
+                        <span class="fa fa-circle pr-1" id="azul"></span>Azul
+                    </a></li>
+                <li class="list-group-item list-group-item-action mb-2 rounded"><a href="#">
+                        <span class="fa fa-circle pr-1" id="verde"></span>Verde
+                    </a></li>
+
+                <li class="list-group-item list-group-item-action mb-2 rounded"><a href="#">
+                        <span class="fa fa-circle pr-1" id="negro"></span>Negro
+                    </a></li>
+                <li class="list-group-item list-group-item-action mb-2 rounded"><a href="#">
+                        <span class="fa fa-circle pr-1" id="otros"></span>Otros..
+                    </a></li>
+            </ul>
+        </div>
+        <div>
+            <h6>Marcas</h6>
+            <form class="ml-md-2">
+                <div class="form-inline border rounded p-sm-2 my-2">
+                    <input type="radio" name="type" id="boring">
+                    <label for="boring" class="pl-1 pt-sm-0 pt-1">Forclaz</label>
+                </div>
+                <div class="form-inline border rounded p-sm-2 my-2">
+                    <input type="radio" name="type" id="ugly">
+                    <label for="ugly" class="pl-1 pt-sm-0 pt-1">Quechua</label>
+                </div>
+                <div class="form-inline border rounded p-md-2 p-sm-1">
+                    <input type="radio" name="type" id="notugly">
+                    <label for="notugly" class="pl-1 pt-sm-0 pt-1">Adidas</label>
+                </div>
+            </form>
+        </div>
+    </section>
+
+
+
+
+    <section id="products">
+        <div class="resultado" id="results">
+
+        </div>
+    </section>
+
+
+
+
+
+
+</body>
+
+</html>
